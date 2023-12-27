@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using SimpleWebsite.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Database
+var MSSQLdatabase = builder.Configuration.GetConnectionString("SimpleWebsiteDb");
+builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(MSSQLdatabase));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
