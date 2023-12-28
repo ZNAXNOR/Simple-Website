@@ -1,14 +1,21 @@
 using Microsoft.EntityFrameworkCore;
 using SimpleWebsite.Data;
+using SimpleWebsite.Interface;
+using SimpleWebsite.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
+var services = builder.Services;
+
+services.AddControllersWithViews();
+
+// Post
+services.AddScoped<IPostInterface, PostRepository>();
+
 // Database
 var MSSQLdatabase = builder.Configuration.GetConnectionString("SimpleWebsiteDb");
-builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(MSSQLdatabase));
-
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(MSSQLdatabase));
 
 var app = builder.Build();
 
@@ -21,6 +28,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();

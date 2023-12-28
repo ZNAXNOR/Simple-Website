@@ -1,0 +1,15 @@
+﻿@model PostModel
+
+<div class="text-center">
+
+    <h1> @Model.Title </h1>
+
+    <p class="lead"> @Model.Description </p>
+
+    <p class="lead">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn fw-bold btn-primary shadow-none me-3"> Edit </a>
+
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn fw-bold btn-danger shadow-none"> Delete </a>
+    </p>
+        
+</div>

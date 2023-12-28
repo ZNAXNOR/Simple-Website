@@ -1,3 +1,76 @@
-﻿<h2> Post Index </h2>
+﻿@model List<PostModel>
 
-<p> Hello from Post View Template! </p>
+<dl class="row">
+
+    <dt class="h2 col-sm-auto"> Post Index </dt>
+
+    @if (Model != null)
+    {
+        <dd class="h2 text-secondary fw-bolder col-sm-1"> @Model.Count </dd>
+    }
+    else
+    {
+        <dd class="h2 text-secondary fw-bolder col-sm-1"> 0 </dd>
+    }
+
+</dl>
+
+
+<p>
+    <a asp-action="Create"> Create New </a>
+</p>
+
+
+<table class="table caption-top">
+    <thead>
+        <tr>
+
+            <th scope="col"> # </th>
+
+            <th scope="col"> Title </th>
+
+            <th scope="col"> Description </th>
+
+            <th scope="col"> </th>
+
+            <th scope="col"> </th>
+        </tr>
+    </thead>
+    @if (Model != null)
+    {
+        <tbody class="table-group-divider">
+
+            @{
+                var i = 1;
+
+                foreach (var post in Model)
+                {
+                    <tr>
+                        <th scope="row">@i</th>
+
+                        <td><a asp-action="Detail" asp-route-id="@post.Id" class="btn btn-link shadow-none"> @post.Title </a></td>
+
+                        <td> @post.Description </td>
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@post.Id" class="btn btn-primary shadow-none"> Edit </a>
+                        </td>
+
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@post.Id" class="btn btn-danger shadow-none"> Delete </a>
+                        </td>
+                    </tr>
+
+                    i++;
+                }
+            }
+
+        </tbody>
+    }
+    else
+    {
+        <caption> No data found! </caption>
+
+        <tbody class="table-group-divider"> </tbody>
+    }
+</table>
