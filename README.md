@@ -94,9 +94,9 @@
 > [!Important]
 > ### This website is created using [ASP.NET Core] ( [MVC](https://learn.microsoft.com/en-us/aspnet/core/mvc/) )
 >
-> This website is created for one simple reason- for it to be barnched for more trials.
+> This website is created for one simple reason- for it to be forked for more trials.
 >
-> This website shall remain untouched in the future and any modicications to be made <i> only </i> for version updates
+> The website shall remain untouched in the future and any modicications to be made <i> only </i> for version updates.
 
 [ASP.NET Core]:https://dotnet.microsoft.com/en-us/apps/aspnet
 
