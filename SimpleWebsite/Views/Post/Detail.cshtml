@@ -1,15 +1,17 @@
 ﻿@model PostModel
 
-<div class="text-center">
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
 
-    <h1> @Model.Title </h1>
+    <div class="container-fluid py-5">
 
-    <p class="lead"> @Model.Description </p>
+        <h1 class="display-5 fw-bold"> @Model.Title </h1>
 
-    <p class="lead">
-        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn fw-bold btn-primary shadow-none me-3"> Edit </a>
+        <p class="col-md-8 fs-4"> @Model.Description </p>
 
-        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn fw-bold btn-danger shadow-none"> Delete </a>
-    </p>
-        
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-lg me-2" type="button"> Edit </a>
+
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger btn-lg" type="button"> Delete </a>
+
+    </div>
+
 </div>
