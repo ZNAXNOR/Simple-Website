@@ -1,44 +1,87 @@
 <h1 align='center'> Simple Website </h1>
 
+
 <div align='center'>
 
 <table>
   
-  <tr> </tr>
-  
-  <td valign="top" width="33%">
-    
-  ## Database  
-  <div align="center">  
-    <img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white" />
-  </div>
-  
-  </td>
+<tr> </tr>
 
 
-  <td valign="top" width="33%">
+<td valign="top" width="35%">
     
-  ## Languages  
-  <div align="center">
-    <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" />
-    <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
-    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  </div>
+## Frontend  
+<div align="center">  
+    
+<a href="https://getbootstrap.com/" target="_blank">
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/bootstrap-plain.svg" alt="Bootstrap" height="50">
+</a>  
+
+<a href="https://www.w3schools.com/css/" target="_blank">
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50">
+</a>  
+
+<a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50">
+</a>  
+
+<a href="https://www.javascript.com/" target="_blank">
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="50">
+</a>  
+
+</div>
   
-  </td>
+</td>
+
+
+<td valign="top" width="33%">
+    
+## Backend  
+<div align="center">  
+    
+<a href="https://www.javascript.com/" target="_blank">
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="50">
+</a>  
+    
+<a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank">
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/csharp-original.svg" alt="C#" height="50">
+</a> 
+
+</div>
+  
+</td>
 
   
-  <td valign="top" width="33%">
+<td valign="top" width="33%">
     
-  ## Framework  
-  <div align="center">  
-    <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />
-  </div>   
+
+## Database  
+<div align="center"> 
   
-  </td>
+<a href="https://www.microsoft.com/en-in/sql-server/sql-server-downloads" target="_blank">
+<img src="https://github.com/ZNAXNOR/Simple-Website/assets/121810601/fdeff82c-eba0-4f3c-82a8-8a2b3e9d0678"  alt=".Net Core" height="50"/>
+</a>  
+
+</div>
+  
+</td>
+
+  
+<td valign="top" width="33%">
+
+## Framework  
+<div align="center">  
+  
+<a href="https://dotnet.microsoft.com/download" target="_blank">
+  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/dotnetcore.png" alt=".Net Core" height="50">
+</a>  
+
+</div>
+  
+</td>
     
-  </tr>
+</tr>
+
 </table> 
 
 </div>
