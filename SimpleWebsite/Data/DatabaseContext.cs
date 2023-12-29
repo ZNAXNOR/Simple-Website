@@ -11,5 +11,6 @@ namespace SimpleWebsite.Data
         }
 
         public DbSet<PostModel> Posts { get; set; }
+        public DbSet<TagModel> Tags { get; set; }
     }
 }

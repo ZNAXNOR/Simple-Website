@@ -1,8 +1,6 @@
-﻿@using SimpleWebsite.ViewModels.PostViewModel
+﻿@model TagModel
 
-@model CreatePostViewModel
-
-<h4> Post Create </h4>
+<h4> Tag Delete </h4>
 
 <hr />
 
@@ -10,24 +8,22 @@
 
     <div class="col-md-4">
 
-        <form asp-action="Create">
+        <form asp-action="Delete">
 
             <!-- Title -->
             <div class="form-group mb-2">
                 <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+                <input asp-for="Title" class="form-control" readonly/>
             </div>
 
             <!-- Description -->
             <div class="form-group mb-2">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+                <input asp-for="Description" class="form-control" readonly/>
             </div>
 
             <div class="form-group mb-2">
-                <input type="submit" value="Save" class="btn btn-success" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
             </div>
 
         </form>

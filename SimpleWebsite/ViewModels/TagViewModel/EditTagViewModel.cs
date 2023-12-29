@@ -1,6 +1,6 @@
-﻿namespace SimpleWebsite.ViewModels
+﻿namespace SimpleWebsite.ViewModels.TagViewModel
 {
-    public class EditPostViewModel
+    public class EditTagViewModel
     {
         public string? Title { get; set; }
         public string? Description { get; set; }

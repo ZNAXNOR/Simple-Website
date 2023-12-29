@@ -1,4 +1,4 @@
-﻿namespace SimpleWebsite.ViewModels
+﻿namespace SimpleWebsite.ViewModels.PostViewModel
 {
     public class CreatePostViewModel
     {

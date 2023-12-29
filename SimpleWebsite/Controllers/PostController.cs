@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SimpleWebsite.Data;
 using SimpleWebsite.Interface;
 using SimpleWebsite.Models;
-using SimpleWebsite.ViewModels;
+using SimpleWebsite.ViewModels.PostViewModel;
 
 namespace SimpleWebsite.Controllers
 {

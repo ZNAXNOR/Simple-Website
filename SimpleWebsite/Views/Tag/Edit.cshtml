@@ -1,8 +1,8 @@
-﻿@using SimpleWebsite.ViewModels.PostViewModel
+﻿@using SimpleWebsite.ViewModels.TagViewModel
 
-@model CreatePostViewModel
+@model EditTagViewModel
 
-<h4> Post Create </h4>
+<h4> Tag Edit </h4>
 
 <hr />
 
@@ -10,7 +10,7 @@
 
     <div class="col-md-4">
 
-        <form asp-action="Create">
+        <form asp-action="Edit">
 
             <!-- Title -->
             <div class="form-group mb-2">
@@ -27,7 +27,7 @@
             </div>
 
             <div class="form-group mb-2">
-                <input type="submit" value="Save" class="btn btn-success" />
+                <input type="submit" value="Update" class="btn btn-primary" />
             </div>
 
         </form>
