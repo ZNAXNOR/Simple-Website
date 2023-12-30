@@ -88,158 +88,76 @@
 
 <br/>  
 
+
 ---
 
 
 > [!Important]
-> ### This website is created using [ASP.NET Core] ( [MVC](https://learn.microsoft.com/en-us/aspnet/core/mvc/) )
+> ### This website is created using [ASP.NET Core]
 >
-> This website is created for one simple reason- for it to be forked for more trials.
+> This website is created for one simple reason- for it to be forked for experiments & testing
 >
-> The website shall remain untouched in the future and any modicications to be made <i> only </i> for version updates.
+> The [Master branch] of this repository shall remain untouched in the future and any modicications for it to be made _only_ for improving existing files and for framework updates. No additional features to be added
+>
+> Experimentation & testing of features to be done in forked branches
 
 [ASP.NET Core]:https://dotnet.microsoft.com/en-us/apps/aspnet
+[Master branch]:https://github.com/ZNAXNOR/Simple-Website/tree/master
 
 
 ---
 
 
 # Content available
-This website resembles [Microsoft documentation for First MVC App](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/)
+<sub>This website resembles [Microsoft documentation for First MVC App](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/)</sub>
 
 
 > [!Note]
-> The website contains of a **Post page** besides **Home page** and **Privacy page**.
-> 
-> User can `Create` `Edit` and `Delete` posts.
-> 
-> Post has a `Title` and `Description`
-> 
-> Post has a `Detail` page which displays the post content besides `Index` page
-
-
-## Created Files available
-### MVVMC
-<sub> [MVC] + [MVVM] </sub>
-
-<details>
-<summary> MVVMC Files </summary>
-  
-- Models
-  - PostModel
-  
-- View
-  - Index
-  - Create
-  - Edit
-  - Delete
-  - Detail
+> Website follows **MVVMC** ([MVC] + [MVVM]) format.
  
-- ViewModel
-  - PostCreateViewModel
-  - PostEditViewModel
+The website contains of a **Post page** besides **Home page** and **Privacy page**.
 
-- Controllers
-  - PostController
-</details>
+User can `Create` `Edit` and `Delete` posts.
+
+Post has a `Title` and `Description`.
+
+Post has a `Detail` page which displays the post content besides `Index` page.
 
 [MVC]:https://learn.microsoft.com/en-us/aspnet/core/mvc/
 [MVVM]:https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm
 
 
-### Database
-
+### Created Files available
 <details>
-<summary> Database Files </summary>
-  
-- Data
-  - DatabaseContext
- 
+<summary> Details </summary>
+
+### MVVMC
+- Models  
+- View 
+- ViewModel
+- Controllers
+
+### Database  
+- Data ->
+  - DatabaseContext.cs
 - Migrations
-  
-</details>
 
-### Additional
-
-<details>
-<summary> Additional Files </summary>
-  
+### Additional Files  
 - Interfaces
-  - IPostInterface
-
 - Repository
-  - PostRepository
     
 </details>
+
 
 ---
 
 
 ## [NuGet Packages]
-### [Bootstrap]
-<details>
-<summary> Description </summary>
-  
-> The most popular front-end framework for developing responsive, mobile first projects on the web.
-
-</details>
-
-
-### [Microsoft.AspNetCore.Identity.EntityFrameworkCore]
-<details>
-<summary> Description </summary>
-  
-> ASP.NET Core Identity provider that uses Entity Framework Core.
-
-</details>
-
-> [!Note]
-> The package was built from this [source code](https://github.com/dotnet/aspnetcore/tree/3f1acb59718cadf111a0a796681e3d3509bb3381)
-
-
-### [Microsoft.EntityFrameworkCore]
-<details>
-<summary> Description </summary>
-  
-> Entity Framework Core is a modern object-database mapper for .NET. It supports LINQ queries, change tracking, updates, and schema migrations. EF Core works with SQL Server, Azure SQL Database, SQLite, Azure Cosmos DB, MySQL, PostgreSQL, and other databases through a provider plugin API.
-
-</details>
-
-> [!Tip]
-> Commonly Used Types:
->  - Microsoft.EntityFrameworkCore.DbContext
->  - Microsoft.EntityFrameworkCore.DbSet
-
-
-### [Microsoft.EntityFrameworkCore.SqlServer]
-<details>
-<summary> Description </summary>
-  
-> Microsoft SQL Server database provider for Entity Framework Core.
-
-</details>
-
-
-### [Microsoft.EntityFrameworkCore.Tools]
-<details>
-<summary> Description </summary>
-  
-> Entity Framework Core Tools for the NuGet Package Manager Console in Visual Studio.
-
-</details>
-
-> [!Tip]
-> - Enables these commonly used commands:
->   - Add-Migration
->   - Bundle-Migration
->   - Drop-Database
->   - Get-DbContext
->   - Get-Migration
->   - Optimize-DbContext
->   - Remove-Migration
->   - Scaffold-DbContext
->   - Script-Migration
->   - Update-Database
+- [Bootstrap]
+- [Microsoft.AspNetCore.Identity.EntityFrameworkCore]
+- [Microsoft.EntityFrameworkCore]
+- [Microsoft.EntityFrameworkCore.SqlServer]
+- [Microsoft.EntityFrameworkCore.Tools]
 
 
 [NuGet Packages]: https://www.nuget.org/
