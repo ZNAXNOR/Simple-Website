@@ -92,7 +92,7 @@
 
 
 > [!Important]
-> ### This repository is forked from  [Master branch]
+> ### This repository is branched from  [Master branch]
 >
 > This repository is forked with the purpose of understanding many-to-many relationship (n:n)
 >
