@@ -115,7 +115,7 @@
 > Tag has a `Detail` page which displays the tag information
 > 
 
-### Created Files
+## Created Files
 <details>
 <summary> Details </summary>
 
@@ -135,7 +135,7 @@
 </details>
 
 
-### Modified Files
+## Modified Files
 <details>
 <summary> Details </summary>
 
