@@ -11,11 +11,13 @@ namespace SimpleWebsite.Controllers
     {
         private readonly DatabaseContext _context;
         private readonly IPostInterface _postInterface;
+        private readonly ITagInterface _tagInterface;
 
-        public PostController(DatabaseContext context, IPostInterface postInterface)
+        public PostController(DatabaseContext context, IPostInterface postInterface, ITagInterface tagInterface)
         {
             _context = context;
             _postInterface = postInterface;
+            _tagInterface = tagInterface;
         }
 
         // Index
@@ -29,20 +31,36 @@ namespace SimpleWebsite.Controllers
 
         // Create
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View();
+            var PostVM = new CreatePostViewModel
+            {
+                TagList = await _context.Tags.ToListAsync()
+            };
+
+            return View(PostVM);
         }
 
         [HttpPost] [ValidateAntiForgeryToken]
-        public IActionResult Create(CreatePostViewModel postVM)
+        public async Task<IActionResult> CreateAsync(CreatePostViewModel postVM)
         {
             if (ModelState.IsValid)
             {
+                var tags = await _tagInterface.GetAll();
+
+                List<TagModel> selectedTags = new List<TagModel>();
+
+                if (postVM.TagId != null && postVM.TagId.Any())
+                {
+                    selectedTags = tags.Where(x => postVM.TagId.Contains(x.Id)).ToList();
+                }
+
+
                 var post = new PostModel
                 {
                     Title = postVM.Title,
                     Description = postVM.Description,
+                    Tags = selectedTags
                 };
 
                 _postInterface.Add(post);
@@ -61,11 +79,13 @@ namespace SimpleWebsite.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int id)
         {
-            var Post = await _postInterface.GetByIdAsync(id);
+            var PostVM = new DetailPostViewModel
+            {
+                Posts = await _postInterface.GetByIdAsync(id),
+                Tags = await _context.Tags.ToListAsync()
+            };
 
-            await _context.SaveChangesAsync();
-
-            return View(Post);
+            return View(PostVM);
         }
 
 

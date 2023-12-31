@@ -8,9 +8,9 @@ namespace SimpleWebsite.Models
         public int Id { get; set; }
         public string? Title { get; set; }
         public string? Description { get; set; }
+        public List<PostModel> Posts { get; set; }
 
         // Posts Many to Many
-        public List<PostModel> Posts { get; set; }
         public List<PostTagModel> PostTags { get; set; }
     }
 }

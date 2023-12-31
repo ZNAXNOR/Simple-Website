@@ -19,6 +19,7 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
 
+
             <!-- Description -->
             <div class="form-group mb-2">
                 <label asp-for="Description" class="control-label"></label>
@@ -26,6 +27,27 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
+
+            <!-- Tag -->
+            @if (Model.TagList != null)
+            {
+                <div class="col-md-12 mb-3">
+                    <label asp-for="TagId" class="control-label"></label>
+
+                    <div class="form-check-inline">
+                        @foreach (var item in Model.TagList)
+                        {
+                            <input name="TagId" type="checkbox" class="btn-check" id="@item.Id" value="@item.Id">
+                            <label asp-for="TagId" class="btn btn-outline-primary" for="@item.Id">@item.Title</label>
+                        }
+                    </div>
+
+                    <span asp-validation-for="TagId" class="text-danger"></span>
+                </div>
+            }
+
+
+            <!-- Submit -->
             <div class="form-group mb-2">
                 <input type="submit" value="Save" class="btn btn-success" />
             </div>
