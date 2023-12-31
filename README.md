@@ -95,7 +95,7 @@
 > [!Important]
 > ### This website is created using [ASP.NET Core]
 >
-> This website is created for one simple reason- for it to be forked for experiments & testing
+> This website is created for one simple reason- for it to be forked/branched for experiments & testing
 >
 > The [Master branch] of this repository shall remain untouched in the future and any modicications for it to be made _only_ for improving existing files and for framework updates. No additional features to be added
 >
