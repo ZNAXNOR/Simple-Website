@@ -94,7 +94,7 @@
 > [!Important]
 > ### This repository is branched from  [Master branch]
 >
-> This repository is forked with the purpose of understanding many-to-many relationship (n:n)
+> This repository is branched with the purpose of understanding many-to-many relationship (n:n)
 >
 > Microsoft documentaton for [Many-to-many relationships]
 
