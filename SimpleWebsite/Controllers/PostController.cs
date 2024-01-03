@@ -25,6 +25,10 @@ namespace SimpleWebsite.Controllers
         {
             var Post = await _context.Posts.ToListAsync();
 
+            var tag = await _context.Posts.Include(p => p.PostTags)
+                                .ThenInclude(t => t.Tag)
+                                .ToListAsync();
+
             return View(Post);
         }
 
@@ -41,7 +45,8 @@ namespace SimpleWebsite.Controllers
             return View(PostVM);
         }
 
-        [HttpPost] [ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateAsync(CreatePostViewModel postVM)
         {
             if (ModelState.IsValid)
@@ -79,13 +84,13 @@ namespace SimpleWebsite.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int id)
         {
-            var PostVM = new DetailPostViewModel
-            {
-                Posts = await _postInterface.GetByIdAsync(id),
-                Tags = await _context.Tags.ToListAsync()
-            };
+            var Post = await _postInterface.GetByIdAsync(id);
 
-            return View(PostVM);
+            var tag = _context.Posts.Include(p => p.PostTags)
+                                .ThenInclude(t => t.Tag)
+                                .Single(p => p.Id == id);
+
+            return View(Post);
         }
 
 
@@ -108,7 +113,8 @@ namespace SimpleWebsite.Controllers
             return View(postVM);
         }
 
-        [HttpPost] [ValidateAntiForgeryToken]
+        [HttpPost] 
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, EditPostViewModel postVM)
         {
             if (!ModelState.IsValid)
@@ -155,7 +161,9 @@ namespace SimpleWebsite.Controllers
             return View(postDetails);
         }
 
-        [HttpPost] [ActionName("Delete")] [ValidateAntiForgeryToken]
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeletePost(int id)
         {
             var postDetails = await _postInterface.GetByIdAsync(id);

@@ -1,24 +1,16 @@
-﻿@using SimpleWebsite.ViewModels.PostViewModel
-
-@model DetailPostViewModel
-
-
-@{
-    var Post = Model.Posts;
-    var Tag = Model.Tags;
-}
+﻿@model PostModel
 
 <div class="p-5 mb-4 bg-body-tertiary rounded-3">
 
     <div class="container-fluid py-5">
 
-        <h1 class="display-5 fw-bold"> @Post.Title </h1>
+        <h1 class="display-5 fw-bold"> @Model.Title </h1>
 
-        <p class="col-md-8 fs-4"> @Post.Description </p>
+        <p class="col-md-8 fs-4"> @Model.Description </p>
 
-        <a asp-action="Edit" asp-route-id="@Post.Id" class="btn btn-primary btn-lg me-2" type="button"> Edit </a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-lg me-2" type="button"> Edit </a>
 
-        <a asp-action="Delete" asp-route-id="@Post.Id" class="btn btn-danger btn-lg" type="button"> Delete </a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger btn-lg" type="button"> Delete </a>
 
     </div>
 
@@ -32,8 +24,6 @@
 
             <th scope="col"> Tags </th>
 
-            <th scope="col"> No. of Posts with this tag </th>
-
             <th scope="col"> Description </th>
 
         </tr>
@@ -44,17 +34,15 @@
 
             @{
                 var i = 1;
-
-                foreach (var tag in Tag)
+                
+                foreach (var tag in Model.PostTags)
                 {
                     <tr>
                         <th scope="row">@i</th>
 
-                        <td><a asp-controller="Tag" asp-action="Detail" asp-route-id="@tag.Id" class="btn btn-link shadow-none"> @tag.Title </a></td>
+                        <td><a asp-controller="Tag" asp-action="Detail" asp-route-id="@tag.TagId" class="link"> @tag.Tag.Title </a></td>
 
-                        <td> # </td>
-
-                        <td> @tag.Description </td>
+                        <td> @tag.Tag.Description </td>
                     </tr>
 
                     i++;

@@ -23,6 +23,10 @@ namespace SimpleWebsite.Controllers
         {
             var Tag = await _context.Tags.ToListAsync();
 
+            var Post = await _context.Tags.Include(p => p.PostTags)
+                                .ThenInclude(t => t.Post)
+                                .ToListAsync();
+
             return View(Tag);
         }
 
@@ -34,7 +38,8 @@ namespace SimpleWebsite.Controllers
             return View();
         }
 
-        [HttpPost] [ValidateAntiForgeryToken]
+        [HttpPost] 
+        [ValidateAntiForgeryToken]
         public IActionResult Create(CreateTagViewModel tagVM)
         {
             if (ModelState.IsValid)
@@ -63,7 +68,10 @@ namespace SimpleWebsite.Controllers
         {
             var Tag = await _tagInterface.GetByIdAsync(id);
 
-            await _context.SaveChangesAsync();
+            var post = _context.Tags.Include(p => p.PostTags)
+                                .ThenInclude(t => t.Post)
+                                .Single(p => p.Id == id);
+
 
             return View(Tag);
         }
@@ -88,7 +96,8 @@ namespace SimpleWebsite.Controllers
             return View(tagVM);
         }
 
-        [HttpPost] [ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, EditTagViewModel tagVM)
         {
             if (!ModelState.IsValid)
@@ -135,7 +144,9 @@ namespace SimpleWebsite.Controllers
             return View(tagDetails);
         }
 
-        [HttpPost] [ActionName("Delete")] [ValidateAntiForgeryToken]
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteTag(int id)
         {
             var tagDetails = await _tagInterface.GetByIdAsync(id);
