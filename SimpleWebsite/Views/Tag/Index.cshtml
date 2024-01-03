@@ -29,6 +29,8 @@
 
             <th scope="col"> Title </th>
 
+            <th scope="col"> Number of Posts </th>
+
             <th scope="col"> Description </th>
 
             <th scope="col"> </th>
@@ -43,21 +45,23 @@
             @{
                 var i = 1;
 
-                foreach (var post in Model)
+                foreach (var tag in Model)
                 {
                     <tr>
                         <th scope="row">@i</th>
 
-                        <td><a asp-action="Detail" asp-route-id="@post.Id" class="btn btn-link shadow-none"> @post.Title </a></td>
+                        <td><a asp-action="Detail" asp-route-id="@tag.Id" class="link"> @tag.Title </a></td>
 
-                        <td> @post.Description </td>
+                        <td> <strong> @tag.PostTags.Count </strong> Posts tagged </td>
+
+                        <td> @tag.Description </td>
 
                         <td>
-                            <a asp-action="Edit" asp-route-id="@post.Id" class="btn btn-primary shadow-none"> Edit </a>
+                            <a asp-action="Edit" asp-route-id="@tag.Id" class="btn btn-primary shadow-none"> Edit </a>
                         </td>
 
                         <td>
-                            <a asp-action="Delete" asp-route-id="@post.Id" class="btn btn-danger shadow-none"> Delete </a>
+                            <a asp-action="Delete" asp-route-id="@tag.Id" class="btn btn-danger shadow-none"> Delete </a>
                         </td>
                     </tr>
 

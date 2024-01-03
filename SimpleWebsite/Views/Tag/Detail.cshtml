@@ -15,3 +15,46 @@
     </div>
 
 </div>
+
+<table class="table caption-top">
+    <thead>
+        <tr>
+
+            <th scope="col"> # </th>
+
+            <th scope="col"> Title </th>
+
+            <th scope="col"> Description </th>
+
+        </tr>
+    </thead>
+    @if (Model.Posts != null)
+    {
+        <tbody class="table-group-divider">
+
+            @{
+                var i = 1;
+
+                foreach (var post in Model.PostTags)
+                {
+                    <tr>
+                        <th scope="row">@i</th>
+
+                        <td><a asp-controller="Post" asp-action="Detail" asp-route-id="@post.PostId" class="link"> @post.Post.Title </a></td>
+
+                        <td> @post.Post.Description </td>
+                    </tr>
+
+                    i++;
+                }
+            }
+
+        </tbody>
+    }
+    else
+    {
+        <caption> No posts found! </caption>
+
+        <tbody class="table-group-divider"> </tbody>
+    }
+</table>

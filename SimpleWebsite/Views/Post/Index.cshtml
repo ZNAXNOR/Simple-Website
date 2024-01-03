@@ -29,6 +29,8 @@
 
             <th scope="col"> Title </th>
 
+            <th scope="col"> Number of Tags </th>
+
             <th scope="col"> Description </th>
 
             <th scope="col"> </th>
@@ -49,7 +51,9 @@
                     <tr>
                         <th scope="row">@i</th>
 
-                        <td><a asp-action="Detail" asp-route-id="@post.Id" class="btn btn-link shadow-none"> @post.Title </a></td>
+                        <td><a asp-action="Detail" asp-route-id="@post.Id" class="link"> @post.Title </a></td>
+
+                        <td> <strong> @post.PostTags.Count </strong> tags </td>
 
                         <td> @post.Description </td>
 
