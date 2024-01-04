@@ -20,6 +20,7 @@ namespace SimpleWebsite.Controllers
             _tagInterface = tagInterface;
         }
 
+
         // Index
         public async Task<IActionResult> Index()
         {
