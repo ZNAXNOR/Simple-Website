@@ -23,9 +23,7 @@ namespace SimpleWebsite.Controllers
         // Index
         public async Task<IActionResult> Index()
         {
-            var Post = await _context.Posts.ToListAsync();
-
-            var tag = await _context.Posts.Include(p => p.PostTags)
+            var Post = await _context.Posts.Include(p => p.PostTags)
                                 .ThenInclude(t => t.Tag)
                                 .ToListAsync();
 
@@ -85,8 +83,8 @@ namespace SimpleWebsite.Controllers
         public async Task<IActionResult> Detail(int id)
         {
             var Post = await _context.Posts.Include(p => p.PostTags)
-                                .ThenInclude(t => t.Tag)
-                                        .SingleAsync(p => p.Id == id);
+                                    .ThenInclude(t => t.Tag)
+                                    .SingleAsync(p => p.Id == id);
 
             return View(Post);
         }
