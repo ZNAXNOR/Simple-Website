@@ -18,6 +18,7 @@ namespace SimpleWebsite.Controllers
             _postInterface = postInterface;
         }
 
+
         // Index
         public async Task<IActionResult> Index()
         {
