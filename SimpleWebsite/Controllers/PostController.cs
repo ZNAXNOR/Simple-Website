@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SimpleWebsite.Data;
 using SimpleWebsite.Interface;
 using SimpleWebsite.Models;
+using SimpleWebsite.ViewModels;
 using SimpleWebsite.ViewModels.PostViewModel;
 
 namespace SimpleWebsite.Controllers
@@ -95,18 +96,52 @@ namespace SimpleWebsite.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
+            // Id Check
             var post = await _postInterface.GetByIdAsync(id);
 
+            // Check
             if (post == null)
             {
                 return View("Error");
             }
 
+            // Initialize Selected Tags
+            var Results = from t in _context.Tags
+                          select new
+                          {
+                              t.Id,
+                              t.Title,
+                              t.Description,
+                              Checked = ((from pt in _context.PostTags
+                                          where (pt.PostId == id) &
+                                                (pt.TagId == t.Id)
+                                          select pt).Count() > 0),
+
+                          };
+
+            // Tags List
+            var TagList = new List<SelectedItemViewModel>();
+
+            // Selected Tags
+            foreach (var item in Results)
+            {
+                TagList.Add(new SelectedItemViewModel
+                {
+                    Id = item.Id,
+                    Name = item.Title,
+                    Description = item.Description,
+                    Selected = item.Checked
+                });
+            }
+
+
             var postVM = new EditPostViewModel
             {
                 Title = post.Title,
-                Description = post.Description
+                Description = post.Description,
+                Tag = TagList
             };
+
             return View(postVM);
         }
 
@@ -114,13 +149,15 @@ namespace SimpleWebsite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, EditPostViewModel postVM)
         {
-            if (!ModelState.IsValid)
+            // Check
+            if (ModelState.IsValid)
             {
                 ModelState.AddModelError("", "Failed to edit post");
 
                 return View("Edit", postVM);
             }
 
+            // Id Select
             var userPost = await _postInterface.GetByIdAsyncNoTracking(id);
 
 
@@ -130,8 +167,30 @@ namespace SimpleWebsite.Controllers
                 {
                     Id = id,
                     Title = postVM.Title,
-                    Description = postVM.Description
+                    Description = postVM.Description,
                 };
+
+                // Delete Selected Tags
+                foreach (var item in _context.PostTags)
+                {
+                    if (item.PostId == id)
+                    {
+                        _context.Entry(item).State = EntityState.Deleted;
+                    }
+                }
+
+                // Update Selected tags
+                foreach (var item in postVM.Tag)
+                {
+                    if (item.Selected)
+                    {
+                        _context.PostTags.Add(new PostTagModel()
+                        {
+                            PostId = id,
+                            TagId = item.Id
+                        });
+                    }
+                }
 
                 _postInterface.Update(post);
 

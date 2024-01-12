@@ -5,8 +5,9 @@
         public int PostId { get; set; }
         public int TagId { get; set; }
 
+
         // Many to Many relationship
-        public PostModel Post { get; set; }
-        public TagModel Tag { get; set; }
+        public virtual PostModel Post { get; set; }
+        public virtual TagModel Tag { get; set; }
     }
 }

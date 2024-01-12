@@ -12,12 +12,14 @@
 
         <form asp-action="Edit">
 
+
             <!-- Title -->
             <div class="form-group mb-2">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
+
 
             <!-- Description -->
             <div class="form-group mb-2">
@@ -26,6 +28,27 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
+
+            <!-- Tag -->
+            <div class="col-md-12 mb-3">
+                <label asp-for="Tag" class="control-label"></label>
+
+                <div class="form-check-inline">
+                    @for (int i = 0; i < Model.Tag.Count(); i++)
+                    {
+                        @Html.EditorFor(m => Model.Tag[i].Selected)
+                        @Html.DisplayFor(m => Model.Tag[i].Name)
+
+                        @Html.HiddenFor(m => Model.Tag[i].Name)
+                        @Html.HiddenFor(m => Model.Tag[i].Id)
+                    }
+                </div>
+
+                <span asp-validation-for="Tag" class="text-danger"></span>
+            </div>
+
+
+            <!-- Submit -->
             <div class="form-group mb-2">
                 <input type="submit" value="Update" class="btn btn-primary" />
             </div>

@@ -11,6 +11,6 @@ namespace SimpleWebsite.Models
         public List<PostModel> Posts { get; set; }
 
         // Posts Many to Many
-        public List<PostTagModel> PostTags { get; set; }
+        public virtual List<PostTagModel> PostTags { get; set; }
     }
 }
