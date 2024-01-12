@@ -8,9 +8,10 @@ namespace SimpleWebsite.Models
         public int Id { get; set; }
         public string? Title { get; set; }
         public string? Description { get; set; }
-        public List<TagModel> Tags { get; set; }
+        public List<TagModel> Tags { get; set; } = new List<TagModel>();
 
         // Many To Many
-        public List<PostTagModel> PostTags { get; set; }
+        public virtual List<PostTagModel> PostTags { get; set; } = new List<PostTagModel>();
     }
 }
+ 

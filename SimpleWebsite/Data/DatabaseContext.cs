@@ -15,6 +15,7 @@ namespace SimpleWebsite.Data
 
 
         public DbSet<PostTagModel> PostTags { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PostModel>()
