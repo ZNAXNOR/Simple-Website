@@ -34,11 +34,13 @@
                 <div class="col-md-12 mb-3">
                     <label asp-for="TagId" class="control-label"></label>
 
+                    <br />
+
                     <div class="form-check-inline">
                         @foreach (var item in Model.TagList)
                         {
-                            <input name="TagId" type="checkbox" class="btn-check" id="@item.Id" value="@item.Id">
-                            <label asp-for="TagId" class="btn btn-outline-primary" for="@item.Id">@item.Title</label>
+                            <input name="TagId" type="checkbox" class="form-check-input" id="@item.Id" value="@item.Id">
+                            <label asp-for="TagId" class="form-check-label me-3" for="@item.Id">@item.Title</label>
                         }
                     </div>
 

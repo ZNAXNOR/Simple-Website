@@ -30,22 +30,26 @@
 
 
             <!-- Tag -->
-            <div class="col-md-12 mb-3">
-                <label asp-for="Tag" class="control-label"></label>
+            @if (Model.Tag != null)
+            {
+                <div class="col-md-12 mb-3">
+                    <label asp-for="Tag" class="control-label"></label>
 
-                <div class="form-check-inline">
-                    @for (int i = 0; i < Model.Tag.Count(); i++)
-                    {
-                        @Html.EditorFor(m => Model.Tag[i].Selected)
-                        @Html.DisplayFor(m => Model.Tag[i].Name)
+                    <br />
 
-                        @Html.HiddenFor(m => Model.Tag[i].Name)
-                        @Html.HiddenFor(m => Model.Tag[i].Id)
-                    }
+                    <div class="form-check-inline">
+                        @for (int i = 0; i < Model.Tag.Count(); i++)
+                        {
+                            <input type="checkbox" asp-for="@Model.Tag[i].Selected" class="form-check-input" id="@Model.Tag[i].Id">
+                            <label class="form-check-label me-3" for="@Model.Tag[i].Id">@Model.Tag[i].Name</label>
+
+                            <input type="hidden" asp-for="@Model.Tag[i].Id">
+                        }
+                    </div>
+
+                    <span asp-validation-for="Tag" class="text-danger"></span>
                 </div>
-
-                <span asp-validation-for="Tag" class="text-danger"></span>
-            </div>
+            }
 
 
             <!-- Submit -->
