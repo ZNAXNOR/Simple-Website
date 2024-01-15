@@ -112,9 +112,8 @@ namespace SimpleWebsite.Controllers
                               t.Id,
                               t.Title,
                               t.Description,
-                              Checked = ((from pt in _context.PostTags
-                                          where (pt.PostId == id) &
-                                                (pt.TagId == t.Id)
+                              Selected = ((from pt in _context.PostTags
+                                          where (pt.PostId == id) & (pt.TagId == t.Id)
                                           select pt).Count() > 0),
 
                           };
@@ -130,7 +129,7 @@ namespace SimpleWebsite.Controllers
                     Id = item.Id,
                     Name = item.Title,
                     Description = item.Description,
-                    Selected = item.Checked
+                    Selected = item.Selected
                 });
             }
 
