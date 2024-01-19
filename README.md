@@ -1,92 +1,74 @@
 <h1 align='center'> Simple Website </h1>
 
-
+<!-- Tools -->
 <div align='center'>
 
 <table>
   
 <tr> </tr>
 
+  <!-- Frontend -->
+  <td valign="top">
+    <h2 align='center'> Frontend </h2>
+    <div align="center">      
+      <a href="https://getbootstrap.com/" title="Bootstrap">
+        <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/bootstrap-plain.svg" alt="Bootstrap" height="50">
+      </a>  
+      &nbsp;
+      <a href="https://www.w3schools.com/css/" title="CSS3">
+        <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50">
+      </a>  
+      <br>
+      <a href="https://html.com/" title="HTML5">
+        <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50">
+      </a>  
+      &nbsp;
+      <a href="https://www.javascript.com/" title="JavaScript">
+        <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="50">
+      </a>  
+    </div>  
+  </td>
 
-<td valign="top" width="35%">
-    
-## Frontend  
-<div align="center">  
-    
-<a href="https://getbootstrap.com/" target="_blank">
-<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/bootstrap-plain.svg" alt="Bootstrap" height="50">
-</a>  
-
-<a href="https://www.w3schools.com/css/" target="_blank">
-<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50">
-</a>  
-
-<a href="https://en.wikipedia.org/wiki/HTML5" target="_blank">
-<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50">
-</a>  
-
-<a href="https://www.javascript.com/" target="_blank">
-<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="50">
-</a>  
-
-</div>
+  <!-- Backend -->
+  <td valign="top">
+    <h2 align='center'> Backend </h2>
+    <div align="center">      
+      <a href="https://www.javascript.com/" title="JavaScript">
+        <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="50">
+      </a>
+      &nbsp;
+      <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" title="C#">
+        <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/csharp-original.svg" alt="C#" height="50">
+      </a> 
+    </div>  
+  </td>
   
-</td>
-
-
-<td valign="top" width="33%">
-    
-## Backend  
-<div align="center">  
-    
-<a href="https://www.javascript.com/" target="_blank">
-<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="50">
-</a>  
-    
-<a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank">
-<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/csharp-original.svg" alt="C#" height="50">
-</a> 
-
-</div>
+  <!-- Database -->
+  <td valign="top">
+    <h2 align='center'> Database </h2>
+    <div align="center">      
+      <a href="https://www.microsoft.com/en-in/sql-server/sql-server-downloads" title="MSSQL">
+        <img src="https://github.com/ZNAXNOR/Simple-Website/assets/121810601/fdeff82c-eba0-4f3c-82a8-8a2b3e9d0678"  alt="MSSQL" height="50"/>
+      </a>  
+    </div>
+  </td>
   
-</td>
+  <!-- Framework -->
+  <td valign="top">
+    <h2 align='center'> Framework </h2>
+    <div align="center">      
+      <a href="https://dotnet.microsoft.com/download" title=".Net Core">
+        <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/dotnetcore.png" alt=".Net Core" height="50">
+      </a> 
+    </div>
 
+  </td>
   
-<td valign="top" width="33%">
-    
-
-## Database  
-<div align="center"> 
-  
-<a href="https://www.microsoft.com/en-in/sql-server/sql-server-downloads" target="_blank">
-<img src="https://github.com/ZNAXNOR/Simple-Website/assets/121810601/fdeff82c-eba0-4f3c-82a8-8a2b3e9d0678"  alt=".Net Core" height="50"/>
-</a>  
-
-</div>
-  
-</td>
-
-  
-<td valign="top" width="33%">
-
-## Framework  
-<div align="center">  
-  
-<a href="https://dotnet.microsoft.com/download" target="_blank">
-  <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/dotnetcore.png" alt=".Net Core" height="50">
-</a>  
-
-</div>
-  
-</td>
-    
-</tr>
-
 </table> 
 
 </div>
 
-<br/>  
+<br/>
 
 
 ---
