@@ -17,7 +17,7 @@ services.AddScoped<IPostInterface, PostRepository>();
 services.AddScoped<ITagInterface, TagRepository>();
 
 // Database
-var MSSQLdatabase = builder.Configuration.GetConnectionString("SimpleWebsiteDb");
+var MSSQLdatabase = builder.Configuration.GetConnectionString("SimpleWebsiteLedgerDb");
 services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(MSSQLdatabase));
 
 var app = builder.Build();

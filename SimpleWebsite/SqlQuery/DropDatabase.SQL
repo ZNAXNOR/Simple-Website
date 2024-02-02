@@ -1,0 +1,5 @@
+﻿USE MASTER;
+GO
+
+DROP DATABASE SimpleWebsiteLedgerDb;
+GO
