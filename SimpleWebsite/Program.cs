@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SimpleWebsite.Data;
 using SimpleWebsite.Interface;
+using SimpleWebsite.Models;
 using SimpleWebsite.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,18 @@ services.AddScoped<IPostInterface, PostRepository>();
 // Database
 var MSSQLdatabase = builder.Configuration.GetConnectionString("SimpleWebsiteDb");
 services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(MSSQLdatabase));
+
+// Identity
+services.AddIdentity<AppUserModel, IdentityRole>(
+    options =>
+    {
+        options.Password.RequireUppercase = false;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequiredUniqueChars = 0;
+        options.Password.RequiredLength = 6;
+    })
+    .AddEntityFrameworkStores<DatabaseContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
 
